@@ -1,10 +1,10 @@
 <!--DEVELOPER: DEAN EBIRI, IS117, Spring 2026 -->
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <tite>Color Style Form - The ColorScheme</tite>
+    <title>Color Style Form - The ColorScheme</title>
 
     <!--Bootstrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -62,95 +62,98 @@
         </p>
     </div>
 </section>
-<!--Main Content-->
+
+<!-- Main Content -->
 <div class="container content-section">
-    <div class="col-12 col-md-3">
-        <div class="sidebar-circle">
-            Style<br>Giude
+    <div class="row g-5">
+ 
+        <!-- Sidebar -->
+        <div class="col-12 col-md-3">
+            <div class="sidebar-circle">
+                Style<br>Guide
+            </div>
+            <div class="sidebar-tips">
+                <h6>Quick Tips</h6>
+                <p>Choose the occasion that best matches your needs — casual, formal, or evening wear all respond differently to color.</p>
+                <p>Higher intensity palettes work well for bold statement outfits. Low intensity suits everyday, versatile wear.</p>
+                <p>The number of colors you select determines how complex your palette will be.</p>
+            </div>
         </div>
-        <div class="sidebar-tips">
-            <h6>Quick Tips for You</h6>
-            <p>Choose the Ocassion that best matches your needs - A causal look, formal setting
-                or even a nice evening out.
-            </p>
-            <p>Higher intensity palettes work well for bold statement outfits. Low intensity suits a more casual everyday look.
-            </p>
-            <p>How many Color are you thinking of matching, this greatly determines the complexity of your outfits.</p>
+ 
+        <!-- Color Style Form -->
+        <div class="col-12 col-md-9">
+            <div class="form-box">
+ 
+                <h2 class="form-heading">Build Your Palette</h2>
+                <p class="form-subtext">
+                    Select your preferred aesthetic, occasion, and color intensity.
+                    Once submitted, a custom color palette will be generated for you.
+                </p>
+ 
+                <form action="#" method="get" class="mt-4">
+ 
+                    <!-- Aesthetic Style -->
+                    <div class="mb-4">
+                        <label for="aesthetic" class="form-label">Preferred Aesthetic</label>
+                        <select class="form-select" id="aesthetic" name="aesthetic">
+                            <option value="" disabled selected>— Select an aesthetic —</option>
+                            <option value="minimalist">Minimalist</option>
+                            <option value="maximalist">Maximalist</option>
+                            <option value="streetwear">Streetwear</option>
+                            <option value="business">Professional</option>
+                            <option value="classic">Classic</option>
+                            <option value="edgy">Edgy / Alternative</option>
+                        </select>
+                    </div>
+
+                    <!-- Color Intensity -->
+                    <div class="mb-4">
+                        <label for="intensity" class="form-label">Color Intensity</label>
+                        <select class="form-select" id="intensity" name="intensity">
+                            <option value="" disabled selected>— Select intensity —</option>
+                            <option value="low">Low — Soft, muted tones</option>
+                            <option value="medium">Medium — Balanced, versatile</option>
+                            <option value="high">High — Bold, vibrant colors</option>
+                        </select>
+                    </div>
+ 
+                    <!-- Purpose / Occasion -->
+                    <div class="mb-4">
+                        <label for="purpose" class="form-label">Outfit Purpose</label>
+                        <select class="form-select" id="purpose" name="purpose">
+                            <option value="" disabled selected>— Select a purpose —</option>
+                            <option value="everyday">Everyday / Casual</option>
+                            <option value="work">Work / Office</option>
+                            <option value="formal">Formal / Black Tie</option>
+                            <option value="evening">Evening / Night Out</option>
+                            <option value="outdoor">Outdoor / Active</option>
+                        </select>
+                    </div>
+ 
+                    <!-- Number of Colors -->
+                    <div class="mb-5">
+                        <label for="numColors" class="form-label">Number of Colors in Palette</label>
+                        <select class="form-select" id="numColors" name="numColors">
+                            <option value="" disabled selected>— Select a number —</option>
+                            <option value="2">2 — Simple duo</option>
+                            <option value="3">3 — Classic trio</option>
+                            <option value="4">4 — Rich combination</option>
+                            <option value="5">5 — Full palette</option>
+                        </select>
+                    </div>
+ 
+                    <!-- Submit -->
+                    <div class="text-center">
+                        <button type="submit" class="btn-submit">Generate My Palette</button>
+                    </div>
+ 
+                </form>
+            </div>
         </div>
+ 
     </div>
-
-    <!--Color Style Form-->
-    <div class="col-12 col-md-9">
-        <div class="form-box">
-
-            <h2 class="form-heading">Build Your personal palette</h2>
-            <p class="form-subtext">
-                Select your preferred aesthetic, ocassion, and color intensity.
-                Once you have saved your preferences, a custom color palette will be generated for you.
-            </p>
-
-            <form action="#" method="GET" class="mt-4">
-
-                <!--Aesthetics-->
-                <div class="mb-4">
-                    <label for="aesthetic" class="form-label">Preferred Aesthetic</label>
-                    <select class="form-select" id="aesthetic" name="aesthetic">
-                        <option value="" disabled selected>- Select an aesthetic -</option>
-                        <option value="minimalist">Minimalist</option>
-                        <option value="maximalist">Maximalist</option>
-                        <option value="streetwear">Streetwear</option>
-                        <option value="formal">Formal/Professional</option>
-                        <option value="classic">Classic</option>
-                        <option value="edgy">Edgy/Alternative</option>
-                    </select>
-                </div>
-
-                <!--intensity-->
-                <div class="mb-4">
-                    <label for="intensity" class="form-lable">Color Intensity</label>
-                    <select class="form-select" id="intensity" name="intensity">
-                        <option value="" disabled selected>- Select Your Intensity -</option>
-                        <option value="low">Low - Soft, neutral tones</option>
-                        <option value="medium">Medium - Versatile</option>
-                        <option value="high">High - Vibrant, Bold colors</option>
-                    </select>
-                </div>
-
-                <!--Ocassion-->
-                <div class="mb-4">
-                    <label for="purpose" class="form-label">Outfit purpose</label>
-                    <select class="form-select" id="purpose" name="purpose">
-                        <option value="" disabled selected>- Select a purpose -</option>
-                        <option value="everyday">Everyday / Casual wear</option>
-                        <option value="work">Office core</option>
-                        <option value="formal">Formal wear</option>
-                        <option value="evening">Night Out</option>
-                        <option value="outdoor">Active</option>
-                    </select>
-                </div>
-
-                <!--Number of Colors-->
-                <div class="mb-5">
-                    <label for="numColors" class="form-label">Number of Colors in Palette</label>
-                    <select class="form-select" id="numColors" name="numColors">
-                        <option value="" disabled selected>- Select a number -</option>
-                        <option value="2">Simple duo mix</option>
-                        <option value="3">Three Layers</option>
-                        <option value="4">Rich Color Combo</option>
-                        <option value="5">Full Palette</option>
-                    </select>
-                </div>
-
-                <!--Submit-->
-                <div class="text-center">
-                    <button type="submit" class="btn-submit">Generate My Palette</button>
-                </div>
-
-            </form>
-        </div>
-    </div>
-
 </div>
+
 <!--Footer-->
 <footer class="site-footer">
     <div class="container">
