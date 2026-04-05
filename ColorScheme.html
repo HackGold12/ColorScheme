@@ -3,73 +3,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The ColorScheme - Style Matcher</title>
-    <!-- CSS only -->
+    <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet">
-
-<!--Navigation Bar-->
+    
 </head>
 <body>
+ 
+<!--Navigation Bar-->
 <nav class="navbar navbar-expand-md navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="ColorScheme.html">Color Chart</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+ 
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+ 
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto">
-
+ 
                 <li class="nav-item">
                     <a class="nav-link active" href="ColorScheme.html">HomePage</a>
                 </li>
-
-                <!--Color Matchers Dropdown-->
+ 
+                <!--Color Matcher Dropdown-->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="colorMatcherDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Color Matcher</a>
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="colorMatcherDrop" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                       Color Matcher
+                    </a>
                     <ul class="dropdown-menu" aria-labelledby="colorMatcherDrop">
                         <li>
                             <a class="dropdown-item" href="color-tools/color-style-form.html">Color Style Form</a>
                         </li>
-                            <li>
-                                <a class="dropdown-item" href="color-tools/results.html">Palette Results</a>
+                        <li>
+                            <a class="dropdown-item" href="color-tools/results.html">Palette Results</a>
                         </li>
                     </ul>
                 </li>
+ 
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
-
+ 
             </ul>
         </div>
     </div>
 </nav>
-
-<!--JUMBOTRON THINY-->
+ 
+<!--JUMBOTRON / HERO-->
 <section class="hero-section">
     <div class="container">
-        <p class="hero-eyebrow">Fashion *  Color  *  Style</p>
+        <p class="hero-eyebrow">Fashion * Color * Style</p>
         <h1 class="hero-title">
             Discover your <span>Perfect, Amazing</span><br>Color Palette
         </h1>
         <p class="hero-subtitle">
-            Welcome to the Fashion ColorScheme Guide, your perfect one stop shop for discovering new, personalized color palettes 
-            tailored to your specific aesthetics - Utilize our quick sttyle form to find the perfect 
-            Color combination that suits your unique preferences.
+            Welcome to the Fashion ColorScheme Guide, your perfect one stop shop for discovering new, personalized color palettes
+            tailored to your specific aesthetics — Utilize our quick style form to find the perfect
+            color combination that suits your unique preferences.
         </p>
         <a href="color-tools/color-style-form.html" class="btn-hero">Start Now</a>
     </div>
 </section>
-
+ 
 <!--CARDS-->
 <section class="cards-section">
     <div class="container">
@@ -78,7 +87,7 @@
             <h2>Explore Our Tools</h2>
             <div class="divider"></div>
         </div>
-
+ 
         <div class="row g-4">
  
             <!--Card 1: Start Color Match-->
@@ -129,7 +138,7 @@
                         <h5 class="card-title">Explore New Palettes</h5>
                         <p class="card-text">
                             Browse curated sample palettes across aesthetics — from minimalist
-                            neutrals to bold colorful maximalist combinations, nothing wrong with a lil inspiration.
+                            neutrals to bold colorful maximalist combinations, nothing wrong with a little inspiration.
                         </p>
                         <div class="mt-auto">
                             <a href="color-tools/results.html" class="btn-card">View Samples</a>
@@ -142,7 +151,7 @@
     </div><!-- /container -->
 </section>
  
-<!--Footer Information-->
+<!--Footer-->
 <footer class="site-footer">
     <div class="container">
         <span class="footer-text">
@@ -152,12 +161,11 @@
         </span>
     </div>
 </footer>
-
-    <!-- Javascript Bundle with Popper -->
+ 
+<!-- Bootstrap JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous">
-</script>
-
+        crossorigin="anonymous"></script>
+ 
 </body>
 </html>
