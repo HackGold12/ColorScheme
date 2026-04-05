@@ -412,6 +412,27 @@ a:hover { color: var(--text-primary); }
 
 .btn-submit:hover { opacity: 0.85; }
 
+/* Form Box*/
+.form-box{
+    background-color: var(--bg--card);
+    border: 1px solid var(--border-subtle);
+    padding: 2.5rem;
+}
+
+.form-heading{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--accent-gold);
+    margin-bottom: 0.4rem;
+}
+
+.form-subtext{
+    font-size: 0.88rem;
+    color: #b8922e;
+    margin-bottom: 0;
+}
+
 /* ── Content sections ── */
 .content-section {
   padding: 3rem 0;
