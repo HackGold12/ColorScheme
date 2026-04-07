@@ -1,273 +1,121 @@
-<!--DEVELOPER: Dean Ebiri, IS117, Spring 2026-->
+<!--DEVELOPER: Dean Ebiri, IS117, Spring 2026 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <titel>Palette Results - The ColorScheme</titel>
-
-    <!--Bootsrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    <title>Your Palette Results — The ColorScheme</title>
+ 
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
-        <link href="../css/main.css" rel="stylesheet">
-
+    <link href="../css/main.css" rel="stylesheet">
 </head>
 <body>
-<!--Navigation Bar-->
+ 
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-md navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="../ColorScheme.html">Polarex</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+ 
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="mianNav">
+ 
+        <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto">
-
+ 
                 <li class="nav-item">
                     <a class="nav-link" href="../ColorScheme.html">HomePage</a>
                 </li>
-
-                <!--Color Matchers Dropdown-->
+ 
+                <!-- Color Matcher Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="colorMatcherDrop" role="button" data-bs-toggle="dropdown" aira-expanded="false">Color Matcher</a>
-
+                    <a class="nav-link dropdown-toggle active" href="#"
+                       id="colorMatcherDrop" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Color Matcher
+                    </a>
                     <ul class="dropdown-menu" aria-labelledby="colorMatcherDrop">
                         <li>
                             <a class="dropdown-item" href="StyleForm.html">Color Style Form</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="results.html">Here Are Your Personal Palette Results</a>
+                            <a class="dropdown-item" href="results.html">Here are Your Personal Palette Results</a>
                         </li>
                     </ul>
                 </li>
-
+ 
                 <li class="nav-item">
                     <a class="nav-link" href="../about.html">About Us</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="../contact.html">Contact Us</a>
                 </li>
-
+ 
             </ul>
         </div>
     </div>
 </nav>
-
-<!--Interior Hero-->
+ 
+<!-- Interior Hero -->
 <section class="interior-hero">
     <div class="container">
-        <h1>Here Is your Color Palette</h1>
-        <p>Fully generated based on your selections, here are the colors that best match the styel your going for.</p>
+        <h1>Discover your Personal Color Palette</h1>
+        <p>Fully generated based on your aesthetic selections, here are some of the colors that best match your style.</p>
     </div>
 </section>
-
-<!--Content-->
+ 
+<!-- Results Container -->
 <div class="container content-section">
-
+ 
+    <!-- Summary of selections -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="selections-summary" id="selectionsSummary">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Palette output -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h3 class="palette-title" id="paletteTitle"></h3>
+            <p class="palette-desc" id="paletteDesc"></p>
+        </div>
+    </div>
+ 
+    <!-- Swatches -->
+    <div class="row g-3 mb-5" id="swatchRow">
+        <!-- Swatches injected by JS -->
+    </div>
+ 
+    <!-- Color theory -->
     <div class="row mb-5">
+        <div class="col-12">
+            <div class="theory-box">
+                <h5 class="theory-title">Why These Colors Work Together</h5>
+                <p class="theory-text" id="theoryText"></p>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- CTA -->
+    <div class="row">
         <div class="col-12 text-center">
-            <p class="results-intro">
-                Attached below are curated sample palettes, just to help give you some ideas for your aesthetic. Each Palette includes
-                a detailed explanation of why the selected colors work cohesively, and how you can incorporate them into your wardrope.
-            </p>
+            <a href="StyleForm.html" class="btn-hero">Feel free to try Again with Different Preferences</a>
         </div>
     </div>
-
-    <!--Minimilist Palette-->
-    <div class="palette-block mb-5">
-        <div class="row g-4 align-items-center">
-            <div class="col-12 col-md-5">
-                <h3 class="palette-title">Minimalist aesthetic - Utilizes Soft Neutral tones</h3>
-                <p class="palette-desc">
-                    A Minimalist aesthetice typically incorporates a clean, understated palette built on warm whites, soft beiges, and cool grays
-                    These tones work together because they share the same low saturation levels, creating effortles cohesion. Perfect for everyday and office wear.
-                </p>
-                <span class="palette-tag">Everyday - Office - Low Intensity</span>
-            </div>
-            <div class="col-12 col-md-7">
-                <div class="row g-2">
-                    <div class="col">
-                        <div class="swatch" style="background:#F5F0EB;">
-                            <span class="swatch-label">#F5F0EB</span>
-                        </div>
-                        <p class="swatch-name">Warm White</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background: #D6CFC8;">
-                            <span class="swacth-label">#D6CFC8</span>
-                        </div>
-                        <p class="swatch-name">Soft Linen</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background: #A89F97;">
-                            <span class="swatch-label">#A89F97</span>
-                        </div>
-                        <p class="swatch-name">Stone</p>
-                    </div>
-                    <div class="col">
-                        <div class="swacth" style="background: #5C5450;">
-                            <span class="swatch-lable">#5C5450</span>
-                        </div>
-                        <p class="swatch-name">Warm Charcoal</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="palette-divider"></div>
-
-    <!--Streetwear Palette-->
-    <div class="palette-block mb-5">
-        <div class="row g-4 align-items-center">
-            <div class="col-12 col-md-5">
-                <h3 class="paltette-title">Streetwear</h3>
-                <p class="palette-desc">
-                    Streetwear Palettes typically follow a bold contrast with deep blacks, bright whites, and a sharp accent.
-                    This Palette draws on complementary contrasts to create high visual impact. Best Suited for casual, night-out
-                    looks where you want to stand out, without doing too much.
-                </p>
-                <span class="palette-tag">Casual - Night Out - High Intensity</span>
-            </div>
-            <div class="col-12 col-md-7">
-                <div class="row g-2">
-                    <div class="col">
-                        <div class="swatch" style="Background: #0D0D0D;">
-                            <span class="swatch-label" style="color:#fff;">#0D0D0D</span>
-                        </div>
-                        <p class="swatch-name">Jet Black</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background:#F2F2F2;">
-                            <span class="swatch-label">#F2F2F2</span>
-                        </div>
-                        <p class="swatch-name">Off White</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="Background: #C0392B;">
-                            <span class="swatch-label" style="color: #fff">#C0392B</span>
-                        </div>
-                        <p class="swatch-name">Signal Red</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background: #4A4A4A;">
-                            <span class="swatch-label" style="color: #fff;">#4A4A4A</span>
-                        </div>
-                        <p class="swatch-name">Asphalt</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="paltett-divider"></div>
-
-    <!--Classic Palette-->
-    <div class="palette-block mb-5">
-        <div class="row gt-4 align-items-center">
-            <div class="col-12 col-md-5">
-                <h3 class="palette-title">Classic</h3>
-                <p class="palette-desc">
-                    Classic, a balance ofr Navy, cream, camel, and burgundy - a four color combination rooted in traditional wear.
-                    These colors are analogous with warmth and work across formal, buisness, and evening ocassions with equal confidence.
-                </p>
-                <span class="palette-tag">Formal - Buisness - Medium Inetnsity</span>
-            </div>
-            <div class="col-12 col-md-7">
-                <div class="row g-2">
-                    <div class="col">
-                        <div class="swatch" style="Background: #1B2A4A;">
-                            <span class="swatch-label" style="color: #fff;">#1B2A4A</span>
-                        </div>
-                        <p class="swatch-name">Navy</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background: #F5ECD7;">
-                            <span class="swatch-label">#F5ECD7</span>
-                        </div>
-                        <p class="swatch-name">Cream</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background: #C19A6B;">
-                            <span class="swatch-label" style="color: #fff;">#C19A6B</span>
-                        </div>
-                        <p class="swathc-name">Camel</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background: #6D2B3D;">
-                            <span class="swatch-label" style="color: #fff;">#6D2B3D</span>
-                        </div>
-                        <p class="swatch-name">Burgundy</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="palette-divider"></div>
-
-    <!--Maximalist Palette-->
-    <div class="palette-block mb-5">
-        <div class="row g-4 align-items-center">
-            <div class="col-12 col-md-5">
-                <h3 class="palette-title">Maximalist - Full Palette</h3>
-                <p class="palette-desc">
-                    A Greedy Palette, that incorporates a mix of Five vibrant colors pulled across the color wheel. When used intentionally,
-                    this palette creates a bold, joyful, and confident look. Anchor the chaos with neutral for the ideal creative combination.
-                </p>
-                <span class="palette-tag">Evening - Creative - High Intensity</span>
-            </div>
-            <div class="col-12 col-md-7">
-                <div class="row g-2">
-                    <div class="col">
-                        <div class="swatch" style="background:#E63946;">
-                            <span class="swatch-label" style="color:#fff;">#E63946</span>
-                        </div>
-                        <p class="swatch-name">Crimson</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background:#F4A261;">
-                            <span class="swatch-label">#F4A261</span>
-                        </div>
-                        <p class="swatch-name">Tangerine</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background:#2A9D8F;">
-                            <span class="swatch-label" style="color:#fff;">#2A9D8F</span>
-                        </div>
-                        <p class="swatch-name">Teal</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background:#6A0572;">
-                            <span class="swatch-label" style="color:#fff;">#6A0572</span>
-                        </div>
-                        <p class="swatch-name">Violet</p>
-                    </div>
-                    <div class="col">
-                        <div class="swatch" style="background:#264653;">
-                            <span class="swatch-label" style="color:#fff;">#264653</span>
-                        </div>
-                        <p class="swatch-name">Midnight</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Back to form-->
-    <div class="row mt-4">
-        <div class="col-12 text-center">
-            <p class="results-intro">Feel Free to try out different results</p>
-            <a href="StyleForm.html" class="btn-hero">Go Back to Style Form</a>
-        </div>
-    </div>
-
+ 
 </div>
+ 
+<!--Footer -->
 <footer class="site-footer">
     <div class="container">
         <span class="footer-text">
@@ -277,10 +125,8 @@
         </span>
     </div>
 </footer>
-
-<!--Bootstrap-->
+ 
+<!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-</body>
-</html>
