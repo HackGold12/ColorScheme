@@ -442,6 +442,83 @@ a:hover { color: var(--text-primary); }
   border-top: 1px solid var(--border-subtle);
 }
 
+/* Results Page */
+.results-intro{
+  font-size: 0.95rem;
+  color: #b8922e;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.palette-block{
+  padding: 2.5rem 0;
+}
+
+.palette-title{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: 0.8rem;
+}
+
+.palette-desc{
+  font-size: 0.88rem;
+  color: #b8922e;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.palette-tag{
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 0.3rem 0.8rem;
+  display: inline-block;
+}
+
+.palette-divider{
+  width: 100%;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 1rem 0 2rem;
+}
+
+.swatch{
+  width: 100%;
+  height: 90px;
+  border-radius: 2px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.4rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.2s;
+}
+
+.swatch:hover{
+  transform: translateY(-4px);
+}
+
+.swatch-label{
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  font-family: 'DM sans', sans-serif;
+  color: rgba(0,0,0,0.6);
+}
+
+.swatch-name{
+  font-size: 0.72rem;
+  color: var(--accent-muted);
+  text-align: center;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+  letter-spacing: 0.05em;
+}
+
+
 /* ── Footer (sticky) ── */
 .site-footer {
   position: fixed;
