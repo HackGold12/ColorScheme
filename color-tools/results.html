@@ -1,3 +1,4 @@
+<!--DEVELOPER: Dean Ebiri, IS117, Spring 2026-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -228,3 +229,333 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+<script>
+// Palette Javascript
+// Each entry creates a curated palette for the users, allwoing of a dynamic page
+
+const PALETTES = {
+    minimalist: {
+        low: {
+            name: "Minimalist Aesthetic",
+            desc: "A minimalist aesthetic utilizes a mix of warm tones, soft geiges and cool grays. These colors work as they are perfect for everyday and office wear.",
+            theory:"These colors typically share low saturation and similar undertones, creating effortless cohesion without visual tension. They are analogous with warmth - a core principle of minimalist dressing. ",
+            colors: [
+                {hex: "#F5F0EB", name: "Warm White",  dark: false},
+                {hex: "#D6CFC8", name: "Soft Linen",   dark: false},
+                {hex: "#A89F97", name: "Stone",        dark: false},
+                {hex: "#7A736C", name: "Warm Gray",    dark: true},
+                {hex: "#5C5450", name: "Warm Charcoal", dark: true}
+            ]
+        },
+        medium: {
+            name: "Minimalist Aesthetic - Clean Contrast",
+            desc: "This palette is a more refined version, that pairs crisp whites with soft mid-tones. Versatile for office and casual ocassion.",
+            theory: "A split between light and mid-tones creates contrast without overwhelming the eye. This palette uses tonal stepping - each color is one step darker, making combinations feel deliberate and cohesive.",
+            colors: [
+                {hex: "#FAFAFA", name: "Pure White",  dark: false},
+                {hex: "#E0DADA", name: "Blush Gray",  dark: false},
+                {hex: "#B0A8A0", name: "Silver Sage", dark: false},
+                {hex: "#6B6460",  name: "Warm Slate",  dark: true},
+                {hex: "#2E2B29",  name: "Espresso",    dark: true},
+            ]
+       },
+       high: {
+        name: "Minimalist - Bold",
+        desc: "This version of minimalist features a high monochromatic palette in black and white with a single bold accent. Striking and modern.",
+        theory: "Monochromatic palettes with a single accent color create maximum visual impact while maintaining balance. The accent draws the eye and defines the outfit's focal point.",
+        colors: [
+            {hex: "#0A0A0A", name: "Jet Black",   dark: true},
+            {hex: "#FFFFFF", name: "Pure White",  dark: false},
+            {hex: "#D4A843", name: "Gold Accent", dark: false},
+            {hex: "#3A3A3A", name: "Charcoal",    dark: true},
+            {hex: "#C8C8C8", name: "Silver",      dark: false},
+        ]
+       }
+    },
+
+    maximalist: {
+        low:{
+            name: "Maximalist aesthetic",
+            desc: "A maximalist aeathetic involves a dreamy multi-color palette where every color feels gentle and playful.",
+            theory: "Pastel colors share a high brightness and low saturation, which allows multiple hues to coexist without clashing. This is the secret to maximalist dressing that feels curated, rather than chaotic.",
+            colors: [
+                {hex: "#F9C6D0", name: "Blush Pink",  dark: false},
+                {hex: "#C5E8F0", name: "Sky Blue",    dark: false},
+                {hex: "#FAF0C0", name: "Soft yellow", dark: false},
+                {hex: "#D4EAC8", name: "Mint Green",  dark: false},
+                {hex: "#E8D4F0", name: "Lavender",    dark: false},
+            ]
+        },
+        medium: {
+            name: "Maximalist - Jewel Tones",
+            desc: "Ever wanted to look like a shiny jewel, with these rich, staturated tones you can implement styles that command attention and exude confidence.",
+            theory: "Jewel tones utilize mid-high saturation colors drawn from gemstones. They share a similar depth of color, allowing multiple hues to balance each other when used in equal proportions.",
+            colors: [
+                {hex: "#1A5276", name: "Sapphire",   dark: true},
+                {hex: "#6C3484", name: "Amethyst",   dark: true},
+                {hex: "#1E8449", name: "Emerald",    dark: true},
+                {hex: "#B7950B", name: "Topaz",      dark: true},
+                {hex: "#922B21", name: "Ruby",       dark: true},
+            ]
+        },
+        high:{
+            name: "Maximalist - Full Spectrum",
+            desc: "The full spectrum, five vibrant colors pulled from across the color wheel for a bold, fearless look.",
+            theory: "This palette uses triadic and complementary color relationships - paring colors opposite each other on the color wheel creates maximum visual tension and energy. Anchor with one neutral tone in order to ground the outfit.",
+            colors:[
+                {hex: "#E63946", name: "Crimson",   dark: true},
+                {hex: "#F4A261", name: "Tangerine", dark: false},
+                {hex: "#2A9D8F", name: "Teal",      dark: true},
+                {hex: "#6A0572", name: "Violet",    dark: true},
+                {hex: "#F7DC6F", name: "Electric Yellow", dark: false}
+            ]
+        }
+    },
+
+    streetwear: {
+        low:{
+            name: "Streetwear - Washed Tones",
+            desc: "A beautiful mix of faded, worn-in colors that feel effortlessly cool and urban.",
+            theory: "Washed colors are slightly desaturated versions of bold hues, they feel authentic and lived-in. They work together due to their shared muted quality, creating harmony without looking dull.",
+            colors: [
+                {hex: "#8C9EA8", name: "Washed Blue",   dark: false},
+                {hex: "#B5A99A", name: "Sand",          dark: false},
+                {hex: "#7A8C7E", name: "Sage",          dark: false},
+                {hex: "#5C5C5C", name: "Faded Black",   dark: true},
+                {hex: "#D4C9BE", name: "Off-White",     dark: false},
+            ]
+        },
+        medium: {
+            name: "Streetwear mid intensity",
+            desc: "A Classic street palette mixing blacks, grays and a statement color.",
+            theory: "The foundation of streetwear color theory is neutrals with a single accent. Black and grey create a strong visual base, and the accent color, use sparingly, elevates the look without overpowering it.",
+            colors: [
+                {hex: "#1A1A1A", name: "Lex-Luthor Black",    dark: true},
+                {hex: "#4A4A4A", name: "Asphalt",             dark: true},
+                {hex: "#8C8C8C", name: "Concrete",            dark: true},
+                {hex: "#E8E8E8", name: "Light Gray",          dark: false},
+                {hex: "#E74C3C", name: "Signal Red",          dark: true}
+            ]
+        },
+        high: {
+            name: "Streetwear Bolder than ever",
+            desc: "High-Contrast, high-energy palette inspired by statement streetwear releases.",
+            theory: "Bold streetwear uses simultaneous contrasts, placing highly saturated colors next to near pitch black neutrals, making both tones appear more intense. This is why neon colors pop on black outfits.",
+            colors: [
+                {hex: "#0D0D0D", name: "Jet Black",   dark: true},
+                {hex: "#F2F2F2", name: "Off White",   dark: false},
+                {hex: "#FF6B00", name: "Blaze Orange", dark: false},
+                {hex: "#00C2FF", name: "Electric Blue", dark: false},
+                {hex: "#B0FF00", name: "Lime",         dark: false},
+            ]
+        }
+    },
+
+    classic: {
+        low: {
+            name: "Classic",
+            desc: "This palette truly understands, refined tones that whisper elegance without needing to shout.",
+            theory: "Quiet Luxury relies on tonal dressing - wearing similar tones from head to toe. These colors are all warm neutrals, creating a semaless, elongating silhoutte that looks polished and intentional.",
+            colors: [
+                {hex: "#F2EBE0", name: "Ivory",   dark: false},
+                {hex: "#D9C9B0", name: "Sand",    dark: false},
+                {hex: "#B89A78", name: "Camel",   dark: false},
+                {hex: "#7A6248", name: "Tan",     dark: true},
+                {hex: "#3D2B1F", name: "Dark Brown", dark: true}
+            ]
+        },
+        medium: {
+            name: "Classic - Timeless Elegance",
+            desc: "This palette utilizes Navy, Cream, Camel and burgundy - the foundation of classic wardrobe dressing.",
+            theory: "These four four colors have anchored classic fashion for over a century. Navy and burgundy are complementary in mood (cool vs warm), while cream and camel act as bridge neutrals that allow them to coexist harmoniously.",
+            colors: [
+                {hex: "#1B2A4A", name: "Navy",     dark: true},
+                {hex: "#F5ECD7", name: "Cream",    dark: false},
+                {hex: "#C19A6B", name: "Camel",    dark: false},
+                {hex: "#6D2B3D", name: "Burgundy", dark: true},
+                {hex: "#2C2C2C", name: "Charcoal", dark: true}
+            ]
+        },
+        high: {
+            name: "Classic - Power Palette",
+            desc: "Bold classic colors that project authority and confidence in any formal setting.",
+            theory: "Classic power dressing uses high-contrast comnbinations of deep, saturated colors. The contrast between dark and light signals confidence, while the classically accepted hues ensure the look reads as sophisticated rather than flashy.",
+            colors: [
+                {hex: "#0A1628", name: "Midnight Navy",    dark: true},
+                {hex: "#FFFFFF", name: "Crisp White",      dark: false},
+                {hex: "#8B0000", name: "Deep Red",         dark: true},
+                {hex: "#D4AF37", name: "Gold",             dark: false},
+                {hex: "#1C1C1C", name: "Black",            dark: true},
+            ]
+        }
+    },
+
+    edgy: {
+        low: {
+            name: "Edgy — Muted Dark",
+            desc: "Desaturated, moody tones that feel alternative without being overwhelming.",
+            theory: "Muted dark palettes use colors that have been grayed-down, removing the brightness while retaining their hue identity. This creates an atmospheric, cinematic quality that defines understated edgy style.",
+            colors: [
+                { hex: "#3D3D3D", name: "Gunmetal",       dark: true  },
+                { hex: "#6B5B6E", name: "Dusty Mauve",    dark: true  },
+                { hex: "#4A5568", name: "Slate",          dark: true  },
+                { hex: "#8B7355", name: "Aged Bronze",    dark: true  },
+                { hex: "#C4B5A0", name: "Pale Sand",      dark: false }
+      ]
+    },
+
+    medium: {
+      name: "Edgy — Dark Aesthetic",
+      desc: "Deep, mysterious colors with gothic and alternative fashion influences.",
+      theory: "Dark aesthetic palettes leverage analogous color harmony within the dark value range. Deep purples, blacks, and dark reds are adjacent on the color wheel and share low lightness, creating visual unity with an ominous undertone.",
+      colors: [
+        { hex: "#0D0D0D", name: "Void Black",     dark: true  },
+        { hex: "#4A0E4E", name: "Deep Purple",    dark: true  },
+        { hex: "#8B0000", name: "Dark Red",       dark: true  },
+        { hex: "#2D2D2D", name: "Charcoal",       dark: true  },
+        { hex: "#C0C0C0", name: "Silver",         dark: false }
+      ]
+    },
+
+    high: {
+      name: "Edgy — Punk Contrast",
+      desc: "Maximum contrast with neons and blacks — loud, unapologetic, and high energy.",
+      theory: "Punk-inspired palettes use simultaneous contrast at its extreme — pure black next to neon or saturated colors creates the highest possible contrast ratio. This is intentionally jarring and attention-grabbing.",
+      colors: [
+        { hex: "#000000", name: "Pure Black",     dark: true  },
+        { hex: "#FF0066", name: "Hot Pink",       dark: true  },
+        { hex: "#00FF41", name: "Matrix Green",   dark: false },
+        { hex: "#FFFF00", name: "Electric Yellow",dark: false },
+        { hex: "#FFFFFF", name: "Pure White",     dark: false }
+      ]
+    }
+  },
+ 
+  formal: {
+    low: {
+      name: "Formal — Soft Ceremony",
+      desc: "Gentle, sophisticated tones suited for daytime formal events and garden parties.",
+      theory: "Soft formal palettes use analogous pastels and light neutrals that feel appropriate for ceremonial occasions without demanding attention. The low saturation signals elegance and refinement.",
+      colors: [
+        { hex: "#F0EAE0", name: "Champagne",      dark: false },
+        { hex: "#D4C5B5", name: "Blush Beige",    dark: false },
+        { hex: "#B8A898", name: "Greige",         dark: false },
+        { hex: "#8C7B6B", name: "Taupe",          dark: true  },
+        { hex: "#5A4A3A", name: "Warm Brown",     dark: true  }
+      ]
+    },
+    medium: {
+      name: "Formal — Black Tie",
+      desc: "The timeless black tie palette — classic, commanding, and undeniably elegant.",
+      theory: "Black and white are achromatic — they contain no hue and therefore work with any color. Adding a single metallic (gold or silver) introduces reflectivity that reads as luxury under formal lighting.",
+      colors: [
+        { hex: "#0A0A0A", name: "Black",          dark: true  },
+        { hex: "#FAFAFA", name: "White",          dark: false },
+        { hex: "#D4AF37", name: "Gold",           dark: false },
+        { hex: "#2C2C2C", name: "Charcoal",       dark: true  },
+        { hex: "#C0C0C0", name: "Silver",         dark: false }
+      ]
+    },
+    high: {
+      name: "Formal — Gala Night",
+      desc: "Bold, luxurious colors for high-profile formal events where you need to stand out.",
+      theory: "High-impact formal dressing uses deep, saturated colors with metallic accents. These hues — deep emerald, midnight blue, rich burgundy — are formally acceptable while still making a statement through their depth and richness.",
+      colors: [
+        { hex: "#0B3D2E", name: "Deep Emerald",   dark: true  },
+        { hex: "#0A1628", name: "Midnight Blue",  dark: true  },
+        { hex: "#6D2B3D", name: "Burgundy",       dark: true  },
+        { hex: "#D4AF37", name: "Gold",           dark: false },
+        { hex: "#F5F0EB", name: "Ivory",          dark: false }
+      ]
+    }
+  }
+};
+
+// Label Maps
+const AESTHETIC_LABELS = {
+    minimalist: "Minimalist",
+    maximalist: "Maximalist",
+    streetwear: "Streetwear",
+    classic: "Classic",
+    edgy: "Edgy / Alternative",
+    formal: "Formal / Professional"
+};
+
+const PURPOSE_LABELS = {
+    everyday: "Everyday / Casual",
+    work: "Work / Office",
+    formal: "Formal / Black Tie",
+    evening : "Evening / Night Out",
+    outdoor: "Outdoor / Active"
+};
+
+const INTENSITY_LABELS = {
+    low : "Low - Soft, muted tones",
+    medium: "Medium - Balanced, versatile",
+    high: "High - Bold, vibrant colors"
+};
+
+// URL parameters
+const params = new URLSearchParams(window.location.search);
+const aesthetic = params.get("aesthetic") || "classic";
+const intensity = params.get("intensity") || "medium";
+const purpose = params.get("purpose") || "everyday";
+const numColors = parseInt(params.get("numColors")) || 4;
+
+// Matching Palette
+// fail safe in case combo is not found
+const paletteData = (PALETTES[aesthetic] && PALETTES[aesthetic][intensity]) ? PALETTES[aesthetic][intensity] : PALETTES["classic"]["medium"];
+
+// Allows for the users to select their number of colors
+const selectedColors = paletteData.colors.slice(0, numColors);
+
+// Selections Summary
+document.getElementById("selectionsSummary").innerHTML = `
+  <div class="summary-grid">
+    <div class="summary-item">
+      <span class="summary-label">Aesthetic</span>
+      <span class="summary-value">${AESTHETIC_LABELS[aesthetic] || aesthetic}</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">Intensity</span>
+      <span class="summary-value">${INTENSITY_LABELS[intensity] || intensity}</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">Occasion</span>
+      <span class="summary-value">${PURPOSE_LABELS[purpose] || purpose}</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">Colors</span>
+      <span class="summary-value">${numColors}</span>
+    </div>
+  </div>
+`;
+
+// Swatches Render
+const swatchRow = document.getElementById("swatchRow");
+selectedColors.forEach(color => {
+  const col = document.createElement("div");
+  col.className = "col-6 col-sm-4 col-md-2";
+  col.innerHTML = `
+    <div class="swatch" style="background:${color.hex}; height:120px;">
+      <span class="swatch-label" style="color:${color.dark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.55)'};">
+        ${color.hex}
+      </span>
+    </div>
+    <p class="swatch-name">${color.name}</p>
+  `;
+  swatchRow.appendChild(col);
+});
+
+// Color theory Explanations
+document.getElementById("theoryText").textContent = paletteData.theory;
+// Title 
+document.getElementById("paletteTitle").textContent = paletteData.name;
+//Desctiption
+document.getElementById("palettedescription").textContent = paletteData.desc;
+
+</script>
+
+</body>
+</html>
