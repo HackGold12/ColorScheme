@@ -442,6 +442,151 @@ a:hover { color: var(--text-primary); }
   border-top: 1px solid var(--border-subtle);
 }
 
+/* ── Contact Page ── */
+.contact-check {
+  background-color: #111;
+  border-color: var(--border-subtle);
+  margin-top: 0.2rem;
+}
+
+.contact-check:checked {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.contact-check-label {
+  font-size: 0.82rem;
+  color: #b8922e;
+  letter-spacing: 0.03em;
+  padding-left: 0.3rem;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ── About Page ── */
+.about-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--accent-gold);
+  margin-bottom: 1.2rem;
+}
+
+.about-text {
+  font-size: 0.9rem;
+  color: #b8922e;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.about-highlight-box {
+  background-color: var(--bg-card);
+  border-left: 3px solid var(--accent-gold);
+  padding: 2.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-gold);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.about-quote-attr {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+}
+
+.how-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 2rem 1.5rem;
+  height: 100%;
+  transition: border-color 0.3s;
+}
+
+.how-card:hover { border-color: var(--accent-muted); }
+
+.how-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--border-subtle);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.how-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.6rem;
+}
+
+.how-text {
+  font-size: 0.85rem;
+  color: #b8922e;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.theory-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.theory-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theory-swatch-group {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.theory-swatch {
+  width: 48px;
+  height: 48px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.theory-row-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.theory-row-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.05em;
+}
+
+.theory-row-desc {
+  font-size: 0.75rem;
+  color: var(--accent-muted);
+  letter-spacing: 0.08em;
+}
+
 /* ── Results Page ── */
 .results-intro {
   font-size: 0.95rem;
