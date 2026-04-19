@@ -1,3 +1,4 @@
+<!--DEVELOPER: DEAN EBIRI, IS117 Spring 2026-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +68,7 @@
 <!--Contact form-->
 <div class="container content-section">
     <div class="row justify-content-center">
-        <div class="col 12 col-md-8">
+        <div class="col-12 col-md-8">
             <div class="form-box">
 
                 <h2 class="form-heading">Send Us a Message</h2>
@@ -90,7 +91,7 @@
 
                     <div class="mb-4">
                         <label for="email" class="form-label">Email Address</label>
-                        <input type="email" class="form-label" placeholder="Enter your Email Address" id="email" name="email">
+                        <input type="email" class="form-control" placeholder="Enter your Email Address" id="email" name="email">
                     </div>
 
                     <div class="mb-4">
@@ -104,10 +105,45 @@
                             <option value="other">What do you wanna Know??</option>
                         </select>
                     </div>
+
+                    <!--Message-->
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="write your message here..."></textarea>
+                    </div>
+
+                    <div class="mb-5">
+                        <div class="form-check">
+                            <input class="form-check-input contact-check" type="checkbox" id="subscribe" name="subscribe">
+                            <label for="subscribe" class="form-check-label contact-check-label">Subscribe to our newsletter for style tips and palette updates</label>
+                        </div>
+                    </div>
+
+                    <!--Submit-->
+                    <div class="text-center">
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </div>
+
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<!--Footer-->
+<footer class="site-footer">
+    <div class="container">
+        <span class="footer-text">
+            &copy; 2026 Made by the Amazing Dean Ebiri
+            &nbsp;|&nbsp; <a href="#">Terms of Service</a>
+            &nbsp;|&nbsp; <a href="#">Privacy Policy</a>
+        </span>
+    </div>
+</footer>
+
+<!--Bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
